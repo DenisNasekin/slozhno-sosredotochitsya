@@ -21,6 +21,7 @@
   position: relative;
   grid-template-rows: 300px 244px 69px ;
   min-block-size: 728px; 
+  block-size: 100vh;
 }
 
 /*Кнопки навигации*/
@@ -276,6 +277,7 @@ header::after {
 .footer {
   margin-top: 80px;
   min-block-size: 728px;
+  block-size: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
