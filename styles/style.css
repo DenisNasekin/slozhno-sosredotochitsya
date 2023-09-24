@@ -182,7 +182,7 @@ header::after {
   gap: 10px;
 }
 
-.question__section-answer p:first-of-type{
+.question__section-answer p:first-of-type {
   padding-block-end: 10px;
 }
 
