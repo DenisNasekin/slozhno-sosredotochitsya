@@ -1,12 +1,29 @@
-/*
-  Специально для тёмной темы при наличии класса,
-  здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
+:root.theme-dark {
+  --title-color: #DB00FF;
+  --text-color: #F1B2CE;
+  --sub-text-color: #000028;
+  --accent-color: #ff0070;
+  --btn-color:#ff0070;
+}
 
 .page.theme_dark {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --title-color: #DB00FF;
+  --text-color: #F1B2CE;
+  --sub-text-color: #000028;
+  --accent-color: #ff0070;
+  --btn-color:#ff0070;
+
+}
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+
+    --title-color: #FFC2E6;
+    --text-color: #353430;
+    --sub-text-color: #353430;
+    --accent-color: #ff8dcb;
+    --btn-color:#353430;   
+    
+  }
 }
