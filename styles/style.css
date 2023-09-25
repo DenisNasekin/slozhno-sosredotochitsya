@@ -302,7 +302,7 @@
 
 /*Медиа запрос под 768px*/
 
-@media (768px <= width < 1023px) {
+@media (608px <= width < 1023px) {
   
   .header {
     min-block-size: 984px;
@@ -463,14 +463,14 @@
   height: 237px;
 }
 .img__item-4 {
-  min-height: 355px;
+  max-height: 355px;
 }
 .img__item-5 {
-  min-height: 237px;
+  max-height: 237px;
 }
 
 .footer {
-  min-block-size: 637px;
+  min-block-size: 647px;
   margin-top: 45px;
 } 
 .footer__title {
