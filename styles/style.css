@@ -1,7 +1,6 @@
 .page {
   margin: auto;
-  max-width: 1024px;
-  font-family: var(--font, sans-serif);
+  font-family: var(--font, monospace);
   font-size: var(--font-size);
   font-weight: 400;
   line-height: 23.4px;
@@ -10,9 +9,12 @@
   background-size: cover;
   background-attachment: fixed;
   padding: 20px;
+  --title-color: #DB00FF;
+  --text-color: #F1B2CE;
+  --sub-text-color: #000028;
+  --accent-color: #ff0070;
+  --btn-color:#ff0070;
 }
-
-
 
 /*Шапка*/
 
@@ -20,7 +22,7 @@
   display: grid;
   position: relative;
   grid-template-rows: 300px 244px 69px ;
-  min-block-size: 728px; 
+  min-block-size: 100%; 
   
 }
 
@@ -44,6 +46,7 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
+  border: 1px solid var(--btn-color);
 }
 
 .header__theme-menu-button:focus {
@@ -51,12 +54,11 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--btn-color);;
+  border-bottom: 1px solid var(--btn-color);
 }
 
 .header__theme-menu-button:hover {
   border: 1px solid rgba(255, 0, 112, 0.40);
-
 }
 
 /*РЕС*/
@@ -72,6 +74,7 @@
   color: var(--btn-color);
   text-align: center;
   padding-right: 8px;
+  text-transform: uppercase;
 }
 
 .decorative__element::after {
@@ -87,24 +90,24 @@
 
 /* Стили углов*/
 
-header::before {
+.frame::before {
   position: absolute;
   top: 0;
   right: 0;
   content: "";
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--btn-color);
+  border-right: 1px solid var(--btn-color);
   inline-size: 25px;
   block-size: 25px;
 }
 
-header::after {
+.frame::after {
   position: absolute;
   bottom: 0;
   left: 0;
   content: "";
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--btn-color);
+  border-left: 1px solid var(--btn-color);
   inline-size: 25px;
   block-size: 25px;
 }
@@ -121,16 +124,17 @@ header::after {
 }
 
 .title-decor {
-  color: var(--sub-title-color);
   font-weight: 700;
   background-color: var(--accent-color);
   font-size: var(--font-size);
   line-height: 23.4px;
+  color: var(--sub-text-color);
 }
 
 .header__text {
   justify-self: end;
   max-inline-size: 491px;
+  
 }
 
 
@@ -158,7 +162,8 @@ header::after {
 }
 
 .question__section-answer-link:hover {
-  text-decoration-line: underline;
+  
+  border-bottom: 1px solid var(--text-color);
 }
 
 .question__section-answer-link:focus {
@@ -166,7 +171,7 @@ header::after {
 }
 
 .question__section-answer-link:focus-visible {
-  border: 1px solid #F1B2CE; 
+  border: 1px solid var(--text-color);
 }
 
 /*Первая секция с вопросами*/
@@ -215,6 +220,10 @@ header::after {
   display: grid;
   grid-template-columns: 34% 66%;
   padding-block-end: 80px;
+}
+
+.question__section-answer-subtitle {
+  font-weight: 400;
 }
 
 .question__section-answer-fhree {
@@ -277,7 +286,6 @@ header::after {
 .footer {
   margin-top: 80px;
   min-block-size: 728px;
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -292,33 +300,9 @@ header::after {
   line-height: 82.5%;
 }
 
-/* Стили углов*/
-
-footer::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  content: "";
-  border-top: 1px solid var(--accent-color);
-  border-right: 1px solid var(--accent-color);
-  inline-size: 25px;
-  block-size: 25px;
-}
-
-footer::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: "";
-  border-bottom: 1px solid var(--accent-color);
-  border-left: 1px solid var(--accent-color);
-  inline-size: 25px;
-  block-size: 25px;
-}
-
 /*Медиа запрос под 768px*/
 
-@media (max-width: 768px) {
+@media (768px <= width < 1023px) {
   
   .header {
     min-block-size: 984px;
@@ -352,11 +336,12 @@ footer::after {
   }
 
   .question__section-answer-two-container {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 20px;
     padding-block-start: 20px;
   }
+
   .question__section-title-two {
     max-inline-size: 236px;
   }
@@ -403,11 +388,23 @@ footer::after {
 
 /*Медиа запрос под 375px*/
 
-@media (max-width: 375px) {
+@media (200px <= width < 608px) {
 
  .page {
    padding: 10px;
  }
+
+ .header__theme-menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+ .header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 
  .header {
   min-block-size: 648px;
@@ -424,6 +421,7 @@ footer::after {
   padding-inline-end: 0 ;
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .question__section-two {
@@ -431,8 +429,9 @@ footer::after {
   padding-block-end: 50px;
 }
 
-.question__section-title-two {
-  max-inline-size: 355px;
+.question__section-answer-two-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .question__section__fhree {
@@ -453,27 +452,31 @@ footer::after {
 }
 
 .img__item-1 {
-  max-height: 142px;
+  height: 142px;
 }
 
 .img__item-2 {
-  max-height: 355px;
+  height: 355px;
 }
 
 .img__item-3 {
-  max-height: 237px;
+  height: 237px;
 }
 .img__item-4 {
-  max-height: 355px;
+  min-height: 355px;
 }
 .img__item-5 {
-  max-height: 2347px;
+  min-height: 237px;
 }
 
 .footer {
+  min-block-size: 637px;
   margin-top: 45px;
-  min-block-size: 647px;
+} 
+.footer__title {
+    
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
 }
 
-}
 
