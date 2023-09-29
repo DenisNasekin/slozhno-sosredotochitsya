@@ -13,13 +13,11 @@
 /*Шапка*/
 
 .header {
-  min-height: 728px;
-  max-height: 100vh;
-  margin: 20px;
+  min-height: 100vh;
+  padding: 20px;
   display: grid;
   position: relative;
   grid-template-rows: 1fr min-content 1fr;  
-  
 }
 
 /*Кнопки навигации*/
@@ -72,6 +70,7 @@
   text-align: center;
   padding-right: 8px;
   text-transform: uppercase;
+  margin: 20px;
 }
 
 .decorative__element::after {
@@ -96,6 +95,7 @@
   border-right: 1px solid var(--btn-color);
   inline-size: 25px;
   block-size: 25px;
+  margin: 20px;
 }
 
 .frame::after {
@@ -107,6 +107,7 @@
   border-left: 1px solid var(--btn-color);
   inline-size: 25px;
   block-size: 25px;
+  margin: 20px;
 }
 
 /*Заголовок шапки*/
@@ -282,9 +283,8 @@
 /*Подвал*/
 
 .footer {
-  min-block-size: 728px;
-  max-block-size: 100vh;
-  margin: 20px;
+  min-block-size: 100vh;
+  padding: 20px;
   position: relative;
   display: flex;
   align-items: center;
@@ -304,8 +304,7 @@
 
 @media (max-width:768px) {
   .header {
-    min-block-size: 984px;
-    max-block-size: 100vh;
+    min-block-size: 100vh;
   }
   
   .header__theme-menu {
@@ -354,8 +353,7 @@
   }  
  
   .footer {
-    min-block-size: 984px;
-    margin: 20px;
+    padding: 20px;
     display: flex;
     justify-content: center;
   }
@@ -365,8 +363,7 @@
 
 @media (max-width:560px) {
  .header {
-  margin: 10px;
-  min-block-size: 648px;
+  padding: 10px;
 }
 
 .header__title {
@@ -427,14 +424,26 @@
 }
 
 .footer {
-  margin: 10px;
-  min-block-size: 647px;
+  padding: 10px;
   display: flex;
   justify-content: center;
 } 
 
 .footer__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+
+  .decorative__element {
+    margin: 10px;
+  }
+  
+  .frame::before {
+    margin: 10px;
+  }
+  
+  .frame::after {
+    block-size: 25px;
+    margin: 10px;
   }
 }
 
