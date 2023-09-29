@@ -13,11 +13,11 @@
 /*Шапка*/
 
 .header {
-  min-height: 100vh;
+  min-block-size: 100vh;
   padding: 20px;
   display: grid;
   position: relative;
-  grid-template-rows: 1fr min-content 1fr;  
+  grid-template-rows: 1fr min-content 1fr;
 }
 
 /*Кнопки навигации*/
@@ -129,7 +129,7 @@
   color: var(--sub-text-color);
 }
 
-.header__text { 
+.header__text {
   max-inline-size: 491px;
   max-block-size: 71px;
   justify-self: end;
@@ -193,7 +193,7 @@
 /*Вторая секция с вопросами*/
 
 .question__section-two {
-  padding-block-start: 80px; 
+  padding-block-start: 80px;
   padding-block-end: 80px;
   margin: 0 20px;
 }
@@ -254,7 +254,7 @@
 .question__section__image-item {
   inline-size: 100%;
   block-size: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   object-position: center;
 }
 
@@ -303,13 +303,9 @@
 /*Медиа запрос под 768px*/
 
 @media (max-width:768px) {
-  .header {
-    min-block-size: 100vh;
-  }
-  
   .header__theme-menu {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: flex-end;
   }
 
   .header__theme-menu-list {
